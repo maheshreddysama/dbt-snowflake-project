@@ -23,8 +23,9 @@ Silver (Staging): Cleaned, filtered, and normalized tabular data using dbt.
 
 Gold (Mart): Business-ready aggregated views for BI and reporting.
 
-📁 Project Structure
-Plaintext
+## 📁 Project Structure
+
+```text
 ├── data/
 │   ├── raw/             # Source PDFs
 │   └── processed/       # Extracted CSV/JSON outputs
@@ -36,7 +37,7 @@ Plaintext
 ├── requirements.txt     # Python dependencies
 └── README.md
 🔧 Getting Started
-Clone the repo: git clone https://github.com/your-username/pdf-de-project.git
+Clone the repo: git clone https://github.com/maheshreddysama/pdf-de-project.git
 
 Setup Venv: python -m venv venv and .\venv\Scripts\activate
 
