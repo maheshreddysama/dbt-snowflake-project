@@ -1,0 +1,20 @@
+# Credentials and Environment
+.env
+
+# Virtual Environment
+venv/
+ENV/
+.venv/
+
+# Data (Don't upload large PDFs or processed CSVs)
+data/raw/
+data/processed/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+
+# dbt specific
+target/
+dbt_packages/
+logs/
