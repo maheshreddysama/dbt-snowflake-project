@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_pdf_pages
+    description: "One row per page per PDF document"
+    columns:
+      - name: extract_id
+        tests: [not_null]
+      - name: page_num
+        tests: [not_null]
+      - name: file_hash
+        tests: [not_null]
+
+  - name: int_pdf_cleaned
+    description: "Cleaned pages with quality flags"
+    columns:
+      - name: clean_text
+        tests: [not_null]
+
+  - name: silver_pdf_documents
+    description: "One clean row per PDF document. Final silver table."
+    columns:
+      - name: file_hash
+        description: "Unique per document — primary key of silver layer"
+        tests:
+          - not_null
+          - unique
+      - name: full_document_text
+        tests: [not_null]
+      - name: blank_page_count
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
